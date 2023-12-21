@@ -1,0 +1,13 @@
+@media only screen and (max-width: 590px) {
+
+  .text-center{
+    font-size: large;
+  }
+}
+
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
