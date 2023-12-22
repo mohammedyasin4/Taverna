@@ -20,12 +20,13 @@ function loadSpecificMenu(){
             "<div class=\"col-6\">" +
             "<a class=\"clickable-card\" href=\"#\">" +
             "<div class=\"card p-2 m-2 card-with-bg\" style=\"background-image:url('" + value.img + "');\">"+
+            // "<img src=\"" + value.img + "\"/>" +
             "<div class=\"card-body\"><h5 class=\"card-title\">" + 
             value.name + "</h5>" + 
             "<p>" + value.dsc + "</p>" +
             "<p>" + value.price + " kr</p>" +
             "<p>Rating: " + value.rate + "/5</p>" +
-            "<p>Origin: " + value.country + "</p></div>" +
+            "<p>Origin: " + value.country + "</p>" +
             "</div></a></div>");
     }
 }
