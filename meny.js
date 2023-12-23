@@ -15,7 +15,36 @@ function loadMenu() {
 }
 
 function loadSpecificMenu(){
-    for(const [key, value] of Object.entries(db.bbqs)){
+    let temp;
+    if(fileName == "breads"){
+        temp = Object.entries(db.breads);
+    }
+
+    else if(fileName == "ice-cream"){
+        temp = Object.entries(db["ice-cream"]);
+    }
+
+    else if(fileName == "best-foods"){
+        temp = Object.entries(db["best-foods"]);
+    }
+
+    else if(fileName == "our-foods"){
+        temp = Object.entries(db["our-foods"]);
+    }
+
+    else if(fileName == "pizzas"){
+        temp = Object.entries(db.pizzas);
+    }
+
+    else if(fileName == "drinks"){
+        temp = Object.entries(db["drinks"]);
+    }
+
+    else {
+        temp = Object.entries(db.bbqs);
+    }
+    
+    for(const [key, value] of temp){
         $(".row").append(
             "<div class=\"col-6\">" +
             "<a class=\"clickable-card\" href=\"#\">" +
