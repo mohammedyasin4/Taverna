@@ -15,18 +15,84 @@ function loadMenu() {
 }
 
 function loadSpecificMenu(){
-    for(const [key, value] of Object.entries(db.bbqs)){
+    
+    let temp;
+
+    if(fileName == "breads"){
+        temp = Object.entries(db.breads);
+    }
+
+    else if(fileName == "ice-cream"){
+        temp = Object.entries(db["ice-cream"]);
+    }
+
+    else if(fileName == "best-foods"){
+        temp = Object.entries(db["best-foods"]);
+    }
+
+    else if(fileName == "our-foods"){
+        temp = Object.entries(db["our-foods"]);
+    }
+
+    else if(fileName == "pizzas"){
+        temp = Object.entries(db["pizzas"]);
+    }
+
+    else if(fileName == "drinks"){
+        temp = Object.entries(db["drinks"]);
+    }
+
+    else if(fileName == "burgers"){
+        temp = Object.entries(db["burgers"]);
+    }
+
+    else if(fileName == "chocolates"){
+        temp = Object.entries(db["chocolates"]);
+
+    }
+    
+    else if(fileName == "fried-chicken"){
+        temp = Object.entries(db["fried-chicken"]);
+    }
+
+    else if(fileName == "porks"){
+        temp = Object.entries(db["porks"]);
+    }
+
+    else if(fileName == "steaks"){
+        temp = Object.entries(db["steaks"]);
+    }
+
+    else if(fileName == "sausages"){
+        temp = Object.entries(db["sausages"]);
+    }
+
+    else if(fileName == "bbqs"){
+        temp = Object.entries(db["bbqs"]);
+    }
+
+    else if(fileName == "sandwiches"){
+        temp = Object.entries(db["sandwiches"]);
+    }
+
+    else if(fileName == "desserts"){
+        temp = Object.entries(db["desserts"]);
+    }
+    
+    for(const [key, value] of temp){
         $(".row").append(
             "<div class=\"col-6\">" +
             "<a class=\"clickable-card\" href=\"#\">" +
             "<div class=\"card p-2 m-2 card-with-bg\" style=\"background-image:url('" + value.img + "');\">"+
+            // "<img src=\"" + value.img + "\"/>" +
             "<div class=\"card-body\"><h5 class=\"card-title\">" + 
             value.name + "</h5>" + 
             "<p>" + value.dsc + "</p>" +
             "<p>" + value.price + " kr</p>" +
             "<p>Rating: " + value.rate + "/5</p>" +
-            "<p>Origin: " + value.country + "</p></div>" +
-            "</div></a></div>");
+            "<p>Origin: " + value.country + "</p>" +
+            "</div></a></div>" +
+            "<button class=\"btn btn-success\">Beställ " + value.name + "</button>");
     }
 }
 
