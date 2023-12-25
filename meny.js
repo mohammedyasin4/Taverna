@@ -92,7 +92,27 @@ function loadSpecificMenu(){
             "<p>Rating: " + value.rate + "/5</p>" +
             "<p>Origin: " + value.country + "</p>" +
             "</div></a></div>" +
-            "<button class=\"btn btn-success\">Beställ " + value.name + "</button>");
+            "<button class=\"btn btn-success\" onclick=\"showOrderConfirmation()\">Beställ " + value.name + "</button>");
     }
 }
 
+function specialOfferMenu(){
+
+    let random1 = Math.floor(Math.random() * 15);
+    let random2 = Math.floor(Math.random() * Object.entries(db)[random1][1].length);
+    console.log("Random 1: " + random1);
+    console.log("Random 2: " + random2);
+    let special = Object.entries(db)[random1][1][random2];
+    $(".special-offer").append(
+        "<div class=\"col-12\">" +
+        "<a class=\"clickable-card\" href=\"#\">" +
+        "<div class=\"card p-2 m-2 card-with-bg\" style=\"background-image:url('" + special.img + "');\">"+
+        "<div class=\"card-body\"><h5 class=\"card-title\">" + 
+        special.name + "</h5>" + 
+        "<p>" + special.dsc + "</p>" +
+        "<p>" + special.price + " kr</p>" +
+        "<p>Rating: " + special.rate + "/5</p>" +
+        "<p>Origin: " + special.country + "</p>" +
+        "</div></a></div>" +
+        "<button class=\"btn btn-success\">Beställ " + special.name + "</button>");
+}
